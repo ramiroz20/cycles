@@ -1,41 +1,59 @@
 package lesson3.massive;
 
 
-
+import java.util.Arrays;
 
 public class hw4 {
 
-    static char[][] star(int n) {
+    static char[][] star() {
 
-        char[][] t = new char[n][n];
+        char[][] t = new char[8][8];
 
-        int j;
-        for (int i = 0; i < n; i++) {
-            for (j = 0; j < n; j++) {
-                if (i > j)
-                    t[i][j] = '*';
-
-                if (i < j) {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4 - i - 1; j++) {
+                t[i][j] = '*';
+                System.out.println(Arrays.deepToString(new char[][]{new char[]{t[i][j]}})
+                        + " " + i + " " + j);
+                if (i > j) {
                     t[i][j] = '1';
-                }else {
+                } else {
                     t[i][j] = '*';
+                }
+
+
+                for (i = j; i < 8; i++) {
+                    for (j = 0; j < 8; j++) {
+                        if (j == 8 - i - 1 || i == j) {
+                            t[i][j] = '*';
+                            System.out.println(Arrays.deepToString(new char[][]{new char[]{t[i][j]}})
+                                    + " " + i + " " + j);
+                        } else {
+                            t[i][j] = ' ';
+
+
+                            System.out.println(Arrays.deepToString(new char[][]{new char[]{t[i][j]}})
+                                    + " " + i + " " + j);
+
+                        }
+                    }
+
+
+
 
                 }
+            }
+        }
+        return t;
+    }
+
+    public static void main(String[] args) {
+        char[][] ans = star();
+        for (int j = 0; j < ans.length; j++) {
+            for (char[] an : ans) {
+                System.out.print(an[j]);
             }
             System.out.println();
         }
-
-
-            return t;
-        }
-
-        public static void main (String[]args){
-            char[][] ans = star(6);
-            for (char[] an : ans) {
-                for (int j = 0; j < ans.length; j++) {
-                    System.out.print(an[j]);
-                }
-                System.out.println();
-            }
-        }
     }
+}
+
