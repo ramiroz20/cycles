@@ -14,11 +14,8 @@ public class hw4 {
                 t[i][j] = '*';
                 System.out.println(Arrays.deepToString(new char[][]{new char[]{t[i][j]}})
                         + " " + i + " " + j);
-                if (i > j) {
-                    t[i][j] = '1';
-                } else {
-                    t[i][j] = '*';
-                }
+
+
 
 
                 for (i = j; i < 8; i++) {
