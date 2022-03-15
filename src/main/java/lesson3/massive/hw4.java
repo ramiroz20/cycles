@@ -9,13 +9,8 @@ public class hw4 {
 
         char[][] t = new char[8][8];
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4 - i - 1; j++) {
-                t[i][j] = '*';
-                System.out.println(Arrays.deepToString(new char[][]{new char[]{t[i][j]}})
-                        + " " + i + " " + j);
-
-
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8 - i - 1; j++) {
 
 
                 for (i = j; i < 8; i++) {
