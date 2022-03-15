@@ -12,7 +12,6 @@ public class hw4 {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
 
-
                 for (i = j; i < 8; i++) {
                     for (j = 0; j < 8; j++) {
                         if (j == 8 - i - 1 || i == j) {
@@ -22,14 +21,10 @@ public class hw4 {
                         } else {
                             t[i][j] = ' ';
 
-
                             System.out.println(Arrays.deepToString(new char[][]{new char[]{t[i][j]}})
                                     + " " + i + " " + j);
-
                         }
                     }
-
-
                 }
             }
         }
