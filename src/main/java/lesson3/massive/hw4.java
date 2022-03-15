@@ -10,7 +10,7 @@ public class hw4 {
         char[][] t = new char[8][8];
 
         for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8 - i - 1; j++) {
+            for (int j = 0; j < 8; j++) {
 
 
                 for (i = j; i < 8; i++) {
@@ -28,8 +28,6 @@ public class hw4 {
 
                         }
                     }
-
-
 
 
                 }
