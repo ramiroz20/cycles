@@ -8,7 +8,7 @@ public class hw6 {
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] > 1) {
                     System.out.println(arr[i] + " - Больше двух");
-                    if(arr[i] < 4){
+                    if (arr[i] < 4) {
                         System.out.println(arr[i] + " - число меньше 5ти");
                     }
                 }
