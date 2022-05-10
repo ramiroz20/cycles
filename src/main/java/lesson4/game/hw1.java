@@ -17,7 +17,6 @@ public class hw1 {
         int SIZE = in.nextInt();
         char[][] map = new char[SIZE][SIZE];
         initTable(map);
-        boolean inStart = true;
         while (true) {
             System.out.println("Введите номер строки и номер столбца для входа");
             print(map);
