@@ -17,7 +17,7 @@ public class hw4 {
                         if (j == 8 - i - 1 || i == j) {
                             t[i][j] = '*';
                             System.out.println(Arrays.deepToString(new char[][]{new char[]{t[i][j]}})
-                                    + " " + i + " " + j);
+                                    + " " + i + " " + j);   // проверка кода
                         } else {
                             t[i][j] = ' ';
 

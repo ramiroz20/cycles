@@ -7,7 +7,7 @@ public class hw1 {
 
     private static int stepCounter = 0;
     private static final char DOT_X = 'X';
-    private static char DOT_0 = '0';
+    private static final char DOT_0 = '0';
     private static final char DASH = '_';
     private static final Random rnd = new Random();
 
@@ -28,41 +28,38 @@ public class hw1 {
                 map[x][y] = DOT_X;
                 stepCounter++;
 
-                if (Step(x, y, map)) {    // промежуточный ход
-                    if(DOT_X == map[3][1])
-                    return;
-
-                    if (isWin(DOT_X, map)) {
-                        print(map);
-                        System.out.println("Эзотерик победил!");
-                        return;
-                    }
-
-                }
-                stepCounter++;
-                if (stepCounter == SIZE * SIZE) {
+                if (isWin(DOT_X, map)) {
                     print(map);
-                    System.out.println("Ничья");
+                    System.out.println("Вы победили!");
                     return;
-                }
-
-                movePc(map);
-                System.out.println("Ход противника");
-                for (int i = 0; i < 7; i++) {
-                    System.out.print(" * ");
-                    Thread.sleep(500);
                 }
 
             }
-            System.out.println();
-            if (isWin(DOT_0, map)) {
+            stepCounter++;
+            if (stepCounter == SIZE * SIZE) {
                 print(map);
-                System.out.println("Массоны победили");
+                System.out.println("Ничья");
                 return;
             }
 
+            movePc(map);
+            System.out.println("Ход противника");
+            for (int i = 0; i < 7; i++) {
+                System.out.print(" * ");
+                Thread.sleep(500);
+            }
+            System.out.println();
+
+
+                if (isWin(DOT_0, map)) {
+                    print(map);
+                    System.out.println("Противник победил");
+                    return;
+                }
+
+            }
+
         }
-    }
 
 
     private static void movePc(char[][] map) {
@@ -133,22 +130,7 @@ public class hw1 {
         return false;
     }
 
-    private static boolean Step(int x, int y, char[][] map) {    // изменения
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map.length; j++) {
-                if (map[3][1] == DOT_X) {
-                    map[2][1] = DOT_0;
-                } else {
-                    map[i][j] = DOT_0;
-
-
-                }
-
-            }
-        }
-
-        return false;
-    }
 }
+
 
 
